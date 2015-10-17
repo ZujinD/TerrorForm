@@ -4,7 +4,7 @@ using System.Collections;
 public class Bullet : MonoBehaviour 
 {
 	public float Speed = 2.5f;
-	public float timer = 2f;
+	public float timer = 2.5f;
 	GameObject hpbar;
 	HealthBar healthbar;
 

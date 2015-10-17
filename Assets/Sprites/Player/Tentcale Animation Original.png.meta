@@ -1,9 +1,28 @@
 fileFormatVersion: 2
 guid: 9b8f22c98076a4c488cad07804b235b0
-timeCreated: 1444779298
+timeCreated: 1445116099
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Tentcale Animation Original_a16
+    21300002: Tentcale Animation Original_a11
+    21300004: Tentcale Animation Original_a6
+    21300006: Tentcale Animation Original_a1
+    21300008: Tentcale Animation Original_a17
+    21300010: Tentcale Animation Original_a12
+    21300012: Tentcale Animation Original_a7
+    21300014: Tentcale Animation Original_a2
+    21300016: Tentcale Animation Original_a18
+    21300018: Tentcale Animation Original_a13
+    21300020: Tentcale Animation Original_a8
+    21300022: Tentcale Animation Original_a3
+    21300024: Tentcale Animation Original_a19
+    21300026: Tentcale Animation Original_a14
+    21300028: Tentcale Animation Original_a9
+    21300030: Tentcale Animation Original_a4
+    21300032: Tentcale Animation Original_a15
+    21300034: Tentcale Animation Original_a10
+    21300036: Tentcale Animation Original_a5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,18 +45,18 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 2048
+  textureFormat: -3
+  maxTextureSize: 8192
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,7 +67,197 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Tentcale Animation Original_a16
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 571
+        width: 35
+        height: 17
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a11
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 567
+        width: 65
+        height: 21
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a6
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 569
+        width: 44
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a1
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 572
+        width: 13
+        height: 16
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a17
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 443
+        width: 30
+        height: 16
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a12
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 438
+        width: 58
+        height: 22
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a7
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 441
+        width: 51
+        height: 20
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a2
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 444
+        width: 20
+        height: 16
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a18
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 316
+        width: 20
+        height: 16
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a13
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 313
+        width: 51
+        height: 20
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a8
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 311
+        width: 58
+        height: 22
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a3
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 315
+        width: 30
+        height: 16
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a19
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 188
+        width: 13
+        height: 16
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a14
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 185
+        width: 44
+        height: 19
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a9
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 183
+        width: 65
+        height: 21
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a4
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 187
+        width: 35
+        height: 17
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a15
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 59
+        width: 41
+        height: 17
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a10
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 55
+        width: 70
+        height: 21
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tentcale Animation Original_a5
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 59
+        width: 41
+        height: 17
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
