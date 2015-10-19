@@ -29,6 +29,5 @@ public class CameraMovement : MonoBehaviour
 		pos.x = Mathf.Clamp(pos.x, leftBound, rightBound);
 		pos.y = Mathf.Clamp(pos.y, bottomBound, topBound);
 		transform.position = pos;
-		Debug.Log (pos.x + ", " + pos.y + ", " + pos.z);
 	}
 }

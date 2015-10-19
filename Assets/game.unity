@@ -14342,6 +14342,8 @@ MonoBehaviour:
   normalSpeed: {x: 5, y: 5}
   fastSpeed: {x: 5, y: 5}
   health: 10
+  blob1: {fileID: 124558, guid: fd941f5e70d22d1479619b5b8496c9ed, type: 2}
+  blob2: {fileID: 161026, guid: 5369188f03f43bd42ba9c3677b90098c, type: 2}
 --- !u!61 &1276083880
 BoxCollider2D:
   m_ObjectHideFlags: 0
