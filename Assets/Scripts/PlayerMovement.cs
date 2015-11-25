@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
 	public int health;
 	public GameObject blob1;
 	public GameObject blob2;
-	Vector2 non = new Vector2(0, 0);
 
 	void Start()
 	{
@@ -27,13 +26,15 @@ public class PlayerMovement : MonoBehaviour
 
 		if (isMoving == true) 
 		{
-			blob1 = (GameObject)Instantiate(blob1, posSlime, transform.rotation);
+			Instantiate(blob1, posSlime, transform.rotation);
 		}
+
 		fastSpeed = speed * 2;
 		float inputX = Input.GetAxis("Horizontal");
 		float inputY = Input.GetAxis("Vertical");
 		movement = new Vector2(speed.x * inputX, speed.y * inputY);
-		if (movement != non) 
+
+		if (GetComponent<Rigidbody2D>().velocity != Vector2.zero) 
 		{
 			isMoving = true;
 		} 

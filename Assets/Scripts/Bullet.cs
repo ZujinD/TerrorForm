@@ -30,10 +30,18 @@ public class Bullet : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
+		if (col.gameObject.tag == "Nature") 
+		{
+			Destroy(this.gameObject);
+		}
 		if (col.gameObject.tag == "Player" ) 
 		{
 			healthbar.HealthDown(1);
-			Destroy(gameObject);
+			Destroy(this.gameObject);
+		}
+		if (col.gameObject.tag == "Nature") 
+		{
+			Destroy(this.gameObject);
 		}
 	}
 }
