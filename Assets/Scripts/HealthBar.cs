@@ -4,45 +4,60 @@ using System.Collections;
 public class HealthBar : MonoBehaviour 
 {
 	Vector3 scale;
-	int playHealth;
-	public int healthMax;
 	GameObject playerA;
-	float segment;
 	public AudioClip hit;
-	// Use this for initialization
+	public float curHealth;
+	public float maxHealth;
+	float barScale;
+	public float hpBar;
+
 	void Start () 
 	{
 		playerA = GameObject.Find ("Player");
-		healthMax = playerA.GetComponent<PlayerMovement>().health;
-		playHealth = playerA.GetComponent<PlayerMovement>().health;
+		maxHealth = playerA.GetComponent<PlayerMovement>().healthMax;
+		curHealth = maxHealth;
 		scale = transform.localScale;
-		segment = scale.x / (float)healthMax;
+		hpBar = scale.x;
+	}
+	void Update ()
+	{
+		scale.x = hpBar;
+		transform.localScale = scale;
+		maxHealth = playerA.GetComponent<PlayerMovement>().healthMax;
+		barScale = curHealth / maxHealth;
+		hpBar = barScale;
 	}
 
-	public void HealthDown(int damX)
+	public void HealthDown(float damX)
 	{
-		if (playHealth > 0) 
+		if (curHealth > 0) 
 		{
 			AudioSource.PlayClipAtPoint(hit, playerA.transform.localPosition);
-			playHealth = playHealth - damX;
-			playerA.GetComponent<PlayerMovement> ().health = playHealth;
-			scale.x = segment * (float)playHealth;
-			transform.localScale = scale;
+
+			curHealth = curHealth - damX;
+			maxHealth = playerA.GetComponent<PlayerMovement>().healthMax;
+			barScale = curHealth / maxHealth;
+			hpBar = barScale;
+			playerA.GetComponent<PlayerMovement>().health = curHealth;
+			/*currentHealth -= 1 + (float)GameAll.getKin() * 0.5f;
+			scale = currentHealth / maxHealth;
+			HealthBar = HealthBar * scale;*/
 		}
-		if (playHealth <= 0)
+		if (curHealth <= 0)
 		{
 			Death ();
 		}
 	}
 
-	public void HealthUp(int healX)
+	public void HealthUp(float healX)
 	{
-		if (playHealth != healthMax) 
+		if (curHealth != maxHealth) 
 		{
-			playHealth = playHealth + healX;
-			playerA.GetComponent<PlayerMovement> ().health = playHealth;
-			scale.x = segment * (float)playHealth;
-			transform.localScale = scale;
+			curHealth = curHealth + healX;
+			maxHealth = playerA.GetComponent<PlayerMovement>().healthMax;
+			barScale = curHealth / maxHealth;
+			hpBar = barScale;
+			playerA.GetComponent<PlayerMovement> ().health = curHealth;
 		}
 	}
 

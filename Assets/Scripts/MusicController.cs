@@ -57,9 +57,7 @@ public class MusicController : MonoBehaviour
 		if (songPlayEnd <= Time.fixedTime) 
 		{
 			playNextSong();
-			Debug.Log("Next");
 		}
-		Debug.Log(Time.fixedTime + " " + songPlayEnd);
 	}
 
 	void startPlayer ()
@@ -89,7 +87,6 @@ public class MusicController : MonoBehaviour
 		songPlayEnd = Time.fixedTime + currentSong.length;
 		musicPlayer.PlayOneShot (currentSong);
 		//fadeIn ();
-
 	}
 
 	void fadeIn() 
