@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ashlan
+  - Enemy
+  - Nature
   layers:
   - Default
   - TransparentFX

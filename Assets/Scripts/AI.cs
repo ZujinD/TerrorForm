@@ -45,8 +45,9 @@ public class AI : MonoBehaviour
 		if (Vector3.Distance (transform.position, target.transform.position) > 1.6 && Vector3.Distance (transform.position, target.transform.position) < 5)//move towards if not close by 
 		{
 			transform.position = Vector2.MoveTowards (enemyPos, playerPos, 2 * Time.deltaTime);
+			moveTimer = 2.0f;
 		}
-		if (moveTimer == 0 && Vector3.Distance (transform.position, target.transform.position) < 1.55)//move away if too close 
+		if (moveTimer <= 0 && Vector3.Distance (transform.position, target.transform.position) < 1.55)//move away if too close 
 		{
 			transform.position = Vector2.MoveTowards (enemyPos, playerPos, -1 * Time.deltaTime);
 		}
