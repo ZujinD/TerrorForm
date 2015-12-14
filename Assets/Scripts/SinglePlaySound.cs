@@ -8,7 +8,7 @@ public class SinglePlaySound : MonoBehaviour
 
 	void Start () 
 	{
-		soundPlayer = gameObject.GetComponent<AudioSource> ();
+		soundPlayer = GameObject.Find ("Main Camera").GetComponent<AudioSource> ();
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
