@@ -15,7 +15,7 @@ public class SinglePlaySound : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Player" ) 
 		{
-			soundPlayer.PlayOneShot(sfx);
+			soundPlayer.PlayOneShot(sfx, GameAll.sfxVolume);
 		}
 	}
 }

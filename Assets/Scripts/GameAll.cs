@@ -11,6 +11,13 @@ public class GameAll : MonoBehaviour
 	static int endUp;
 	static int agiUp;
 	static int kinUp;
+	public static float sfxVolume = 1.0f;
+	public static float musicVolume = 1.0f;
+	public static float ambientVolume = 1.0f;
+	static int sv;
+	static int mv;
+	static int av;
+	public static bool pauseMenuUP = false;
 
 	void Awake()
 	{
@@ -129,5 +136,66 @@ public class GameAll : MonoBehaviour
 	public static int getEnd()
 	{
 		return endValue;
+	}
+
+	public static void sfxVolumeUp()
+	{
+		sv = System.Convert.ToInt32(sfxVolume * 10);
+		if (sv <= 9) 
+		{
+			sv = sv + 1;
+			sfxVolume = (float)sv / 10;
+			Debug.Log(sfxVolume);
+		} 
+	}
+	public static void sfxVolumeDown()
+	{
+		sv = System.Convert.ToInt32(sfxVolume * 10);
+		if (sv >= 1) 
+		{
+			sv = sv - 1;
+			sfxVolume = (float)sv / 10;
+			Debug.Log(sfxVolume);
+		} 
+	}
+	public static void musicVolumeUp()
+	{
+		mv = System.Convert.ToInt32(musicVolume * 10);
+		if (mv <= 9) 
+		{
+			mv = mv + 1;
+			musicVolume = (float)mv / 10;
+			Debug.Log(musicVolume);
+		}
+	}
+	public static void musicVolumeDown()
+	{
+		mv = System.Convert.ToInt32(musicVolume * 10);
+		if (mv >= 1) 
+		{
+			mv = mv - 1;
+			musicVolume = (float)mv / 10;
+			Debug.Log(musicVolume);
+		} 
+	}
+	public static void ambientVolumeUp()
+	{
+		av = System.Convert.ToInt32(ambientVolume * 10);
+		if (av <= 9) 
+		{
+			av = av + 1;
+			ambientVolume = (float)av / 10;
+			Debug.Log(ambientVolume);
+		} 
+	}
+	public static void ambientVolumeDown()
+	{
+		av = System.Convert.ToInt32(ambientVolume * 10);
+		if (av >= 1) 
+		{
+			av = av - 1;
+			ambientVolume = (float)av / 10;
+			Debug.Log(ambientVolume);
+		} 
 	}
 }

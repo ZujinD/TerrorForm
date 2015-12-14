@@ -37,7 +37,7 @@ public class BaseStats : MonoBehaviour
 	{
 		if (col.gameObject.name == "AttackTentacle" && currentHealth > 0) 
 		{
-			source.PlayOneShot(attackHit);
+			source.PlayOneShot(attackHit, GameAll.sfxVolume);
 			currentHealth -= 1 + (float)GameAll.getKin() * 0.5f;
 			scale = currentHealth / maxHealth;
 			HealthBar = HealthBar * scale;
@@ -45,7 +45,7 @@ public class BaseStats : MonoBehaviour
 			{
 				if(currentHealth <= 0)
 				{
-					AudioSource.PlayClipAtPoint(attackHit, gameObject.transform.localPosition);
+					AudioSource.PlayClipAtPoint(attackHit, gameObject.transform.localPosition, GameAll.sfxVolume);
 					Instantiate(DNA, transform.position, transform.rotation);
 					Destroy(gameObject);
 				}

@@ -105,7 +105,7 @@ public class BossAI : MonoBehaviour
 	
 	void rockAoeUpAttack()
 	{
-		//AudioSource.PlayClipAtPoint(sAttackSound, gameObject.transform.localPosition);
+		//AudioSource.PlayClipAtPoint(sAttackSound, gameObject.transform.localPosition, GameAll.sfxVolume);
 		AoeFire = true;
 		for (int i = 0; i < colObAll.transform.childCount; i++)
 		{
@@ -120,12 +120,12 @@ public class BossAI : MonoBehaviour
 	}
 	void rockRangedUpAttack()
 	{
-		AudioSource.PlayClipAtPoint(sAttackSound, gameObject.transform.localPosition);
+		AudioSource.PlayClipAtPoint(sAttackSound, gameObject.transform.localPosition, GameAll.sfxVolume);
 
 	}
 	void rockMeleeAttack()
 	{
-		AudioSource.PlayClipAtPoint(lAttackSound, gameObject.transform.localPosition);
+		AudioSource.PlayClipAtPoint(lAttackSound, gameObject.transform.localPosition, GameAll.sfxVolume);
 
 	}
 }
