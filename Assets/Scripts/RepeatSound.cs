@@ -15,6 +15,7 @@ public class RepeatSound : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Player" ) 
 		{
+			soundPlayer.volume = GameAll.sfxVolume;
 			soundPlayer.loop = true;
 			soundPlayer.clip = sfx;
 			soundPlayer.Play();

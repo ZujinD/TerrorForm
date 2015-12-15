@@ -17,7 +17,6 @@ public class SkillButton : MonoBehaviour
 			GameAll.decreaseDNA(GameAll.getEndUp());
 			GameAll.addEnd (1);
 			playerA.GetComponent<PlayerMovement>().incHealth();
-
 		}
 	}
 

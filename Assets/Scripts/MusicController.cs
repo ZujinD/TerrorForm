@@ -58,11 +58,12 @@ public class MusicController : MonoBehaviour
 		{
 			playNextSong();
 		}
+		musicPlayer.volume = GameAll.musicVolume;
 	}
 
 	void startPlayer ()
 	{
-		musicPlayer.PlayOneShot (currentSong);
+		musicPlayer.PlayOneShot (currentSong, GameAll.musicVolume);
 	}
 
 	void findNextSong()
@@ -85,7 +86,7 @@ public class MusicController : MonoBehaviour
 		currentSong = nextSong;
 		songStart = Time.fixedTime;
 		songPlayEnd = Time.fixedTime + currentSong.length;
-		musicPlayer.PlayOneShot (currentSong);
+		musicPlayer.PlayOneShot (currentSong, GameAll.musicVolume);
 		//fadeIn ();
 	}
 

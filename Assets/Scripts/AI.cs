@@ -75,7 +75,7 @@ public class AI : MonoBehaviour
 	{
 		moveTimer = moveDelay;
 		cooldownTimer = fireDelay;
-		AudioSource.PlayClipAtPoint(spitSound, gameObject.transform.localPosition);
+		AudioSource.PlayClipAtPoint(spitSound, gameObject.transform.localPosition, GameAll.sfxVolume);
 		GameObject spitGO = (GameObject)Instantiate(spit, origin.transform.position, origin.rotation);
 		spitGO.layer = spitLayer;
 	}
