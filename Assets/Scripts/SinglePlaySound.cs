@@ -8,14 +8,14 @@ public class SinglePlaySound : MonoBehaviour
 
 	void Start () 
 	{
-		soundPlayer = GameObject.Find ("Main Camera").GetComponent<AudioSource> ();
+		soundPlayer = gameObject.GetComponent<AudioSource> ();
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		if (col.gameObject.tag == "Player" ) 
 		{
-			soundPlayer.PlayOneShot(sfx, GameAll.sfxVolume);
+			soundPlayer.PlayOneShot(sfx);
 		}
 	}
 }

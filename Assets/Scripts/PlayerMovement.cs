@@ -58,10 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
 		if (Input.GetKeyDown (KeyCode.Mouse0)) 
 		{
-			if(GameAll.pauseMenuUP == false)
-			{
-				anim.SetTrigger("Attack");
-			}
+			anim.SetTrigger("Attack");
 		}
 
 
