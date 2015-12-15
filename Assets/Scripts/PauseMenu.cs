@@ -27,6 +27,7 @@ public class PauseMenu : MonoBehaviour
 	Text endToUpgrade;
 	Text agiToUpgrade;
 	Text kinToUpgrade;
+	public AudioClip buttonSound;
 
 	void Start()
 	{
@@ -150,6 +151,13 @@ public class PauseMenu : MonoBehaviour
 		skillsBut.SetActive (true);
 		optionsBut.SetActive (true);
 		optionsMenu.SetActive (false);
+	}
+
+	public void soundClick()
+	{
+		gameObject.GetComponent<AudioSource> ().clip = buttonSound;
+		gameObject.GetComponent<AudioSource> ().volume = GameAll.sfxVolume;
+		gameObject.GetComponent<AudioSource> ().PlayOneShot (buttonSound);
 	}
 
 	public void mainMenu()
