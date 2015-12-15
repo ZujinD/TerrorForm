@@ -145,7 +145,7 @@ public class GameAll : MonoBehaviour
 		{
 			sv = sv + 1;
 			sfxVolume = (float)sv / 10;
-			Debug.Log(sfxVolume);
+			//Debug.Log(sfxVolume);
 		} 
 	}
 	public static void sfxVolumeDown()
@@ -155,7 +155,7 @@ public class GameAll : MonoBehaviour
 		{
 			sv = sv - 1;
 			sfxVolume = (float)sv / 10;
-			Debug.Log(sfxVolume);
+			//Debug.Log(sfxVolume);
 		} 
 	}
 	public static void musicVolumeUp()
@@ -165,7 +165,7 @@ public class GameAll : MonoBehaviour
 		{
 			mv = mv + 1;
 			musicVolume = (float)mv / 10;
-			Debug.Log(musicVolume);
+			//Debug.Log(musicVolume);
 		}
 	}
 	public static void musicVolumeDown()
@@ -175,7 +175,7 @@ public class GameAll : MonoBehaviour
 		{
 			mv = mv - 1;
 			musicVolume = (float)mv / 10;
-			Debug.Log(musicVolume);
+			//Debug.Log(musicVolume);
 		} 
 	}
 	public static void ambientVolumeUp()
@@ -185,7 +185,7 @@ public class GameAll : MonoBehaviour
 		{
 			av = av + 1;
 			ambientVolume = (float)av / 10;
-			Debug.Log(ambientVolume);
+			//Debug.Log(ambientVolume);
 		} 
 	}
 	public static void ambientVolumeDown()
@@ -195,7 +195,7 @@ public class GameAll : MonoBehaviour
 		{
 			av = av - 1;
 			ambientVolume = (float)av / 10;
-			Debug.Log(ambientVolume);
+			//Debug.Log(ambientVolume);
 		} 
 	}
 }

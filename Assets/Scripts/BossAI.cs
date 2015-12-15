@@ -8,6 +8,7 @@ public class BossAI : MonoBehaviour
 	public AudioClip sAttackSound;
 	public AudioClip lAttackSound;
 	public AudioClip startUp;
+	public AudioClip attackHit;
 	GameObject player;
 	GameObject colObLarge;
 	GameObject colObSmall;
@@ -27,25 +28,51 @@ public class BossAI : MonoBehaviour
 	float aoeActiveTimer = 0.0f;
 	bool fightStarted = false;
 	bool AoeFire = false;
+	public float maxHealth;
+	public float currentHealth;
+	float HealthBar;
+	float startHealthBar;
+	GameObject bar;
+	Vector3 temp;
+	float scale;
+	Quaternion barRotation;
+	bool isColliding;
+	GameObject Rocks1;
+	GameObject Rocks2;
 
 
 	void Start () 
 	{
+		bar = gameObject.transform.FindChild ("BossHPBar").gameObject;
+		temp = bar.transform.localScale;
+		startHealthBar = temp.x;
+		HealthBar = startHealthBar;
+		currentHealth = maxHealth;
 		player = GameObject.Find ("Player");
 		target = player.transform;
 		colObLarge = GameObject.Find ("Ranged Attack");
 		colObSmall = GameObject.Find ("AOE Attack");
+		colObAll = GameObject.Find ("Large AOE Attack");
+		Rocks1 = GameObject.Find ("Blockage1");
+		Rocks2 = GameObject.Find ("Blockage2");
 		colObAll = GameObject.Find ("Large AOE Attack");
 		playerCol = player.GetComponent<Collider2D> ();
 		colLarge = colObLarge.GetComponent<Collider2D>();
 		colSmall = colObSmall.GetComponent<Collider2D>();
 		colAll = colObAll.GetComponent<Collider2D>();
 		aoeAnim = GameObject.Find ("Large AOE Attack").GetComponent<Animator> ();
-		soundPlayer = GameObject.Find ("Main Camera").GetComponent<AudioSource> ();
+		soundPlayer = gameObject.GetComponent<AudioSource> ();
 	}
 
 	void Update () 
 	{
+		barRotation = transform.localRotation;
+		barRotation.x = 0;
+		transform.localRotation = barRotation;
+		temp.x = HealthBar;
+		bar.transform.localScale = temp;
+		isColliding = false;
+
 		if (colSmall.IsTouching (playerCol) && !colLarge.IsTouching(playerCol)) 
 		{
 			if(sAoeCooldownTimer <= 0)
@@ -68,8 +95,14 @@ public class BossAI : MonoBehaviour
 		{
 			if(fightStarted == false)
 			{
-				//soundPlayer.PlayOneShot(startUp);
+				soundPlayer.PlayOneShot(startUp);
 				Debug.Log("started");
+				for (int i = 0; i < Rocks2.transform.childCount; i++)
+				{
+					Transform blah;
+					blah = Rocks2.transform.GetChild(i);
+					blah.gameObject.SetActive(true);
+				}
 				fightStarted = true;
 			}
 			if(lAoeCooldownTimer <= 0)
@@ -82,7 +115,6 @@ public class BossAI : MonoBehaviour
 					aoeAttack.SetActive(false);
 				}*/
 			}
-
 		}
 		sAoeCooldownTimer -= Time.deltaTime;
 		lAoeCooldownTimer -= Time.deltaTime;
@@ -90,29 +122,59 @@ public class BossAI : MonoBehaviour
 		aoeActiveTimer -= Time.deltaTime;
 		if(aoeActiveTimer <= 0 && AoeFire == true)
 		{
-			Debug.Log ("Start");
 			for (int i = 0; i < colObAll.transform.childCount; i++)
 			{
 				Transform blah;
 				blah = colObAll.transform.GetChild(i);
 				blah.gameObject.SetActive(false);
-				Debug.Log ("Child" + i + " is inactive.");
 			}
 			colObAll.GetComponent<Animator>().enabled = false;
 			AoeFire = false;
 		}
 	}
-	
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if(isColliding) return;
+		isColliding = true;
+		if (col.gameObject.name == "AttackTentacle" && currentHealth > 0) 
+		{
+			soundPlayer.PlayOneShot(attackHit, GameAll.sfxVolume);
+			currentHealth -= 1 + (float)GameAll.getKin() * 0.5f;
+			scale = currentHealth / maxHealth;
+			HealthBar = startHealthBar * scale;
+			if(gameObject.name != "Player")
+			{
+				if(currentHealth <= 0)
+				{
+					for (int i = 0; i < Rocks1.transform.childCount; i++)
+					{
+						Transform blah;
+						blah = Rocks1.transform.GetChild(i);
+						blah.gameObject.SetActive(false);
+					}
+					for (int i = 0; i < Rocks2.transform.childCount; i++)
+					{
+						Transform blah;
+						blah = Rocks2.transform.GetChild(i);
+						blah.gameObject.SetActive(false);
+					}
+					AudioSource.PlayClipAtPoint(attackHit, gameObject.transform.localPosition, GameAll.sfxVolume);
+					Destroy(gameObject);
+				}
+			}
+		}
+		
+	}
+
 	void rockAoeUpAttack()
 	{
-		//AudioSource.PlayClipAtPoint(sAttackSound, gameObject.transform.localPosition, GameAll.sfxVolume);
 		AoeFire = true;
 		for (int i = 0; i < colObAll.transform.childCount; i++)
 		{
 			Transform blah;
 			blah = colObAll.transform.GetChild(i);
 			blah.gameObject.SetActive(true);
-			Debug.Log ("AGH");
 		}
 		colObAll.GetComponent<Animator>().enabled = true;
 		colObAll.GetComponent<Animator> ().Play ("AOE1", -1, 0.0f);

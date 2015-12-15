@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 426336}
   - 212: {fileID: 21237826}
-  - 60: {fileID: 6087238}
+  - 61: {fileID: 6199190}
   m_Layer: 0
   m_Name: Large Rock
   m_TagString: Untagged
@@ -29,8 +29,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!60 &6087238
-PolygonCollider2D:
+--- !u!61 &6199190
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -40,19 +40,8 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: .288358957, y: .39503935}
-      - {x: .0100386152, y: .468281537}
-      - {x: -.195039526, y: .468281537}
-      - {x: -.282930166, y: .380390912}
-      - {x: -.400117666, y: -.190898195}
-      - {x: -.400117666, y: -.381327897}
-      - {x: -.297578603, y: -.42527321}
-      - {x: .317655832, y: -.42527321}
-      - {x: .420194894, y: -.337382585}
-      - {x: .420194894, y: .0288283844}
-      - {x: .405546457, y: .292500287}
+  serializedVersion: 2
+  m_Size: {x: .800000072, y: .890000045}
 --- !u!212 &21237826
 SpriteRenderer:
   m_ObjectHideFlags: 1

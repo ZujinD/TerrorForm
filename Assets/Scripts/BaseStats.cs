@@ -7,7 +7,7 @@ public class BaseStats : MonoBehaviour
 	public float currentHealth;
 	public AudioClip attackHit;
 	private AudioSource source;
-	public float HealthBar;
+	float HealthBar;
 	GameObject bar;
 	Vector3 temp;
 	Quaternion barRotation;
