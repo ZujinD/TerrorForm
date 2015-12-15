@@ -17,7 +17,7 @@ public class CollectDNA : MonoBehaviour
 	{
 		if (col.gameObject.name == "Player") 
 		{
-			AudioSource.PlayClipAtPoint(chomp, gameObject.transform.localPosition, GameAll.sfxVolume);
+			AudioSource.PlayClipAtPoint(chomp, gameObject.transform.localPosition);
 			GameAll.incDNA(1);
 			hBar.HealthUp(1);
 			Destroy(gameObject);

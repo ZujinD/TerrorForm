@@ -32,13 +32,16 @@ public class HealthBar : MonoBehaviour
 	{
 		if (curHealth > 0) 
 		{
-			AudioSource.PlayClipAtPoint(hit, playerA.transform.localPosition, GameAll.sfxVolume);
+			AudioSource.PlayClipAtPoint(hit, playerA.transform.localPosition);
 
 			curHealth = curHealth - damX;
 			maxHealth = playerA.GetComponent<PlayerMovement>().healthMax;
 			barScale = curHealth / maxHealth;
 			hpBar = barScale;
 			playerA.GetComponent<PlayerMovement>().health = curHealth;
+			/*currentHealth -= 1 + (float)GameAll.getKin() * 0.5f;
+			scale = currentHealth / maxHealth;
+			HealthBar = HealthBar * scale;*/
 		}
 		if (curHealth <= 0)
 		{

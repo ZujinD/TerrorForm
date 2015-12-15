@@ -6,8 +6,6 @@ TagManager:
   tags:
   - Enemy
   - Nature
-  - Ashlan
-  - Attacks
   layers:
   - Default
   - TransparentFX
